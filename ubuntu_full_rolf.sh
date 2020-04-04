@@ -24,7 +24,7 @@ sudo swapon /swapfile
 #sudo nano /etc/fstab
 #/swapfile                                 none            swap    sw              0       0
 
-#btrfs
+#btrfs swap
 btrfs filesystem usage /
 dmesg | grep crc32c
 
@@ -50,6 +50,11 @@ free -h
 #sudo swapoff -v /swapfile
 #fstab
 #sudo rm /swapfile
+
+####################################
+# ZRam
+
+sudo apt-get install zram-config 
 
 #####################################################################
 # Aussehen: Adapta, Breeze_cursors und Papirus icons, Mod Gnome Bar #
