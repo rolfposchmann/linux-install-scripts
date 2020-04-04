@@ -4,10 +4,10 @@ sudo apt update
 sudo apt install -y curl wget git
 
 #Auflösung
-
+cd ~
 touch external_monitor_resolution.sh
 echo "xrandr --newmode "1280x1024_60.00"  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hsync +vsync" > external_monitor_resolution.sh
-echo "xrandr --addmode DVI-1 1280x1024_60.00" >> 
+echo "xrandr --addmode DVI-1 1280x1024_60.00" >> external_monitor_resolution.sh
 sudo chmod 755 external_monitor_resolution.sh
 sudo mv external_monitor_resolution.sh /etc/profile.d/external_monitor_resolution.sh
 sudo /etc/profile.d/external_monitor_resolution.sh
@@ -15,18 +15,18 @@ sudo /etc/profile.d/external_monitor_resolution.sh
 
 #SWAP
 #sudo fallocate -l 1G /swapfile
-sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576   #1GB
+#sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576   #1GB
 #sudo dd if=/dev/zero of=/myswap count=4096 bs=1MiB
-ls -lh /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
-sudo swapon /swapfile
+#ls -lh /swapfile
+#sudo chmod 600 /swapfile
+#sudo mkswap /swapfile
+#sudo swapon /swapfile
 #sudo nano /etc/fstab
 #/swapfile                                 none            swap    sw              0       0
 
 #btrfs swap
-btrfs filesystem usage /
-dmesg | grep crc32c
+#btrfs filesystem usage /
+#dmesg | grep crc32c
 
 sudo rm /swapfile
 sudo truncate -s 0 /swapfile
@@ -41,12 +41,13 @@ sudo swapon /swapfile
 echo "#/swapfile                                 none            swap    sw                            0       0" | sudo tee -a /etc/fstab
 
 
-sudo swapon --show
-free -h
+#sudo swapon --show
+#free -h
 
 #cat /proc/sys/vm/swappiness
 #sudo nano /etc/sysctl.conf
 #add: vm.swappiness=10
+echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf
 
 #renove swap
 #sudo swapoff -v /swapfile
@@ -70,7 +71,7 @@ echo "#tmpfs                                     /tmp            tmpfs   rw,nosu
 
 sudo apt install -y gnome-tweaks 
 #sudo apt-add-repository ppa:tista/adapta
-sudo apt install papirus-icon-theme adapta-gtk-theme breeze-cursor-theme chrome-gnome-shell
+sudo apt install -y papirus-icon-theme adapta-gtk-theme breeze-cursor-theme chrome-gnome-shell
 #hier aktivieren: https://extensions.gnome.org/extension/1160/dash-to-panel/
 wget https://raw.githubusercontent.com/rolfposchmann/linux-install-scripts/master/files/ConfigRolfBar -O ~/PanelConfig
 
@@ -78,7 +79,7 @@ wget https://raw.githubusercontent.com/rolfposchmann/linux-install-scripts/maste
 # Weitere Icons, Themes
 
 #Arc Theme
-sudo apt-get install arc-theme
+sudo apt-get install -y arc-theme
 #Nordic Theme
 sudo git clone https://github.com/EliverLara/Nordic.git /usr/share/themes/Nordic
 
@@ -86,7 +87,7 @@ sudo git clone https://github.com/EliverLara/Nordic.git /usr/share/themes/Nordic
 sudo git clone https://github.com/zayronxio/Zafiro-icons.git /usr/share/icons/Zafiro
 
 #Numix icons
-sudo apt install numix-icon-theme-circle
+sudo apt install -y numix-icon-theme-circle
 
 #Paper icons
 mkdir -p ~/themes/icons && cd ~/themes/icons && git clone https://github.com/rolfposchmann/paper-icon-theme.git
@@ -106,9 +107,11 @@ sudo apt-get install -y zsh
 sudo apt install -y fonts-powerline
 
 #Nord theme for console
+cd ~
 git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
 cd nord-gnome-terminal/src
 ./nord.sh
+cd ~
 
 #More color themes for console
 #https://github.com/Mayccoll/Gogh
