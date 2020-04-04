@@ -12,6 +12,45 @@ sudo chmod 755 external_monitor_resolution.sh
 sudo mv external_monitor_resolution.sh /etc/profile.d/external_monitor_resolution.sh
 sudo /etc/profile.d/external_monitor_resolution.sh
 
+
+#SWAP
+#sudo fallocate -l 1G /swapfile
+sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576   #1GB
+#sudo dd if=/dev/zero of=/myswap count=4096 bs=1MiB
+ls -lh /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+#sudo nano /etc/fstab
+#/swapfile                                 none            swap    sw              0       0
+
+#btrfs
+btrfs filesystem usage /
+dmesg | grep crc32c
+
+sudo truncate -s 0 /swapfile
+sudo chattr +C /swapfile
+sudo btrfs property set /swapfile compression none
+sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576 
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+# swapoff /swapfile
+# rm -f /swapfile
+
+
+sudo swapon --show
+free -h
+
+#cat /proc/sys/vm/swappiness
+#sudo nano /etc/sysctl.conf
+#add: vm.swappiness=10
+
+#renove swap
+#sudo swapoff -v /swapfile
+#fstab
+#sudo rm /swapfile
+
 #####################################################################
 # Aussehen: Adapta, Breeze_cursors und Papirus icons, Mod Gnome Bar #
 #####################################################################
