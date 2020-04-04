@@ -1,8 +1,7 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt install -y curl wget git
-sudo apt install -y neofetch
+sudo apt install -y curl wget git neofetch htop
 
 #Auflösung
 cd ~
