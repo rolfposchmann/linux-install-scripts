@@ -28,6 +28,7 @@ sudo swapon /swapfile
 btrfs filesystem usage /
 dmesg | grep crc32c
 
+sudo rm /swapfile
 sudo truncate -s 0 /swapfile
 sudo chattr +C /swapfile
 sudo btrfs property set /swapfile compression none
