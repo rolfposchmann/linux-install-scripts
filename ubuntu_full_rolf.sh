@@ -65,6 +65,11 @@ sudo apt-get install zram-config
 
 echo "#tmpfs                                     /tmp            tmpfs   rw,nosuid,nodev               0       0" | sudo tee -a /etc/fstab
 
+#############
+# Software
+sudo apt-get install vlc-plugin-fluidsynth vlc-plugin-jack vlc-plugin-sdl browser-plugin-vlc libxvidcore4 libfaac0 
+
+
 #####################################################################
 # Aussehen: Adapta, Breeze_cursors und Papirus icons, Mod Gnome Bar #
 #####################################################################
