@@ -2,6 +2,7 @@
 
 sudo apt update
 sudo apt install -y curl wget git
+sudo apt install -y neofetch
 
 #Auflösung
 cd ~
