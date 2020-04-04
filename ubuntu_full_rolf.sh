@@ -67,18 +67,31 @@ echo "#tmpfs                                     /tmp            tmpfs   rw,nosu
 
 #############
 # Software
-sudo apt-get install vlc-plugin-fluidsynth vlc-plugin-jack vlc-plugin-sdl browser-plugin-vlc libxvidcore4 libfaac0 
+sudo apt-get install vlc 
+sudo apt-get install vlc-plugin-fluidsynth 
+sudo apt-get install vlc-plugin-jack 
+#sudo apt-get install vlc-plugin-sdl 
+sudo apt-get install libxvidcore4 libfaac0 
+
+#Eclips
+sudo apt-get install default-jre 
+#snap package installieren
+#https://www.yatta.de/profiles/
 
 
 #####################################################################
 # Aussehen: Adapta, Breeze_cursors und Papirus icons, Mod Gnome Bar #
 #####################################################################
 
-sudo apt install -y gnome-tweaks 
 #sudo apt-add-repository ppa:tista/adapta
 sudo apt install -y papirus-icon-theme adapta-gtk-theme breeze-cursor-theme chrome-gnome-shell
+
+# PANEL
+sudo apt install -y gnome-tweaks 
 #hier aktivieren: https://extensions.gnome.org/extension/1160/dash-to-panel/
 wget https://raw.githubusercontent.com/rolfposchmann/linux-install-scripts/master/files/ConfigRolfBar -O ~/PanelConfig
+#Start Menu
+#https://extensions.gnome.org/extension/6/applications-menu/
 
 
 # Weitere Icons, Themes
