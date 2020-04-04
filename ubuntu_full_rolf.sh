@@ -37,6 +37,7 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 # swapoff /swapfile
 # rm -f /swapfile
+echo "#/swapfile                                 none            swap    sw                            0       0" | sudo tee -a /etc/fstab
 
 
 sudo swapon --show
@@ -55,6 +56,12 @@ free -h
 # ZRam
 
 sudo apt-get install zram-config 
+
+
+##################################
+# /tmp on tmpfs
+
+echo "#tmpfs                                     /tmp            tmpfs   rw,nosuid,nodev               0       0" | sudo tee -a /etc/fstab
 
 #####################################################################
 # Aussehen: Adapta, Breeze_cursors und Papirus icons, Mod Gnome Bar #
