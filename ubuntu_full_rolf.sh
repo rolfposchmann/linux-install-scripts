@@ -33,6 +33,9 @@ sudo git clone https://github.com/EliverLara/Nordic.git /usr/share/themes/Nordic
 #Zafiro icons
 sudo git clone https://github.com/zayronxio/Zafiro-icons.git /usr/share/icons/Zafiro
 
+#Numix icons
+sudo apt install numix-icon-theme-circle
+
 #Paper icons
 mkdir -p ~/themes/icons && cd ~/themes/icons && git clone https://github.com/rolfposchmann/paper-icon-theme.git
 cd paper-icon-theme/
