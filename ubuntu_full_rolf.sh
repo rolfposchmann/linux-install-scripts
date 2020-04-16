@@ -141,3 +141,13 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 #nano ~/.zshrc
 #-> ZSH_THEME="agnoster"
 #-> plugins=(git bundler osx rake ruby)
+
+
+#Network Manager
+#To install NetworkManager:
+sudo apt-get install network-manager
+#To install the GNOME applet / indicator:
+sudo apt-get install network-manager-gnome
+#Start network manager
+sudo start network-manager
+
