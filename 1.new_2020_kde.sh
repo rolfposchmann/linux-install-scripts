@@ -25,6 +25,10 @@ sudo apt install -y curl wget git neofetch htop latte-dock
 
 sudp apt install moka-icon-theme
 
+sudo add-apt-repository ppa:elementary-add-team/icons
+sudo apt-get update
+sudo apt-get install elementary-add-icon-theme
+
 
 #Auflösung
 cd ~
