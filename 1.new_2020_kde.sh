@@ -23,6 +23,8 @@
 sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y
 sudo apt install -y curl wget git neofetch htop latte-dock
 
+sudp apt install moka-icon-theme
+
 
 #Auflösung
 cd ~
