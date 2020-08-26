@@ -32,6 +32,6 @@ done
 
 
 sudo nano /etc/sysctl.conf 
-vm.swappiness = 10
+vm.swappiness=10
 
 cat /proc/sys/vm/swappiness
